@@ -1,0 +1,34 @@
+{
+    "about_url": "URL",
+    "assets": {
+        "image_background": "assets/background.jpg",
+        "TitilliumWeb-Italic" : "assets/font/TitilliumWeb-Italic.ttf",
+        "TitilliumWeb-Light" : "assets/font/TitilliumWeb-Light.ttf",
+        "TitilliumWeb-LightItalic" : "assets/font/TitilliumWeb-LightItalic.ttf",
+        "TitilliumWeb-Regular" : "assets/font/TitilliumWeb-Regular.ttf",
+        "TitilliumWeb-SemiBold" : "assets/font/TitilliumWeb-SemiBold.ttf",
+        "TitilliumWeb-SemiBoldItalic" : "assets/font/TitilliumWeb-SemiBoldItalic.ttf"
+    },
+    "color_schemes": {
+        "Dash Green": {
+            "primary": "F3F3F3",
+            "secondary": "222629",
+            "tertiary": "8CC63E",
+            "quaternary": "8CC63E",
+            "header_background": "23353A",
+            "header_primary": "F3F3F3",
+            "highlight": "B58900",
+            "danger": "CC3333",
+            "success": "8CC63E",
+            "love": "8CC63E"
+        }
+    },
+    "license_url": null,
+    "name": "Dash",
+    "component": false,
+    "about_url": null,
+    "authors": "Zack Fea",
+    "theme_version": "1.0.0",
+    "minimum_discourse_version": null,
+    "maximum_discourse_version": null
+}

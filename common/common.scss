@@ -1,0 +1,375 @@
+@import "common/foundation/variables";
+
+$color_main_background: rgba($header_background, 0.8) !default;
+$color_black_background: rgba($header_background, 0.5) !default;
+$color_dark_background: darken($color_main_background, 3%) !default;
+$color_text_light: darken($primary, 20%) !default;
+$color_text_dark: $header_background;
+$color_link: $quaternary !default;
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Titillium Web Light'),
+    local('TitilliumWeb-Light'),
+    url(#{$TitilliumWeb-Light}) format('woff2');
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: italic;
+    font-weight: 200;
+    src: local('Titillium Web Light Italic'),
+    local('TitilliumWeb-LightItalic'),
+    url(#{$TitilliumWeb-LightItalic}) format('woff2');
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Titillium Web Regular'),
+    local('TitilliumWeb-Regular'),
+    url(#{$TitilliumWeb-Regular}) format('woff2');
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Titillium Web Italic'),
+    local('TitilliumWeb-Italic'),
+    url(#{$TitilliumWeb-Italic}) format('woff2');
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Titillium Web SemiBold'),
+    local('TitilliumWeb-SemiBold'),
+    url(#{$TitilliumWeb-SemiBold}) format('woff2');
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Titillium Web SemiBold Italic'),
+    local('TitilliumWeb-SemiBoldItalic'),
+    url(#{$TitilliumWeb-SemiBoldItalic}) format('woff2');
+}
+
+@mixin navigation() {
+    li.active{
+        a{
+            font-weight: bold;
+            color: $tertiary;
+            background-color: $color_main_background;
+        }
+    }
+    li {
+        margin: 0;
+        a {
+            font-weight: normal;
+            padding: 0.75em 1em;
+            transition: all 0.5s ease;
+            &:hover{
+                background-color: $tertiary;
+                color: $color_text_dark;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+%header-background-element{
+    background-color: $header_background;
+    padding: 1rem;
+}
+
+%main-background-element{
+    background-color: $color_dark_background;
+    padding: 0.5rem;
+}
+
+body {
+    background: $header_background url(#{$image_background}) center fixed;
+    background-size: cover;
+}
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+.d-header {
+    box-shadow: none;
+    border-bottom: 1px solid $tertiary;
+    .d-header-icons{
+        .icon{
+            &:hover{
+                background-color: $tertiary;
+                .d-icon{
+                    color: $color_text_dark;
+                }
+            }
+        }
+    }
+}
+
+.navigation-container {
+    background-color: $header_background;
+    display: inline-block;
+    width: 100%;
+    ol,
+    ul,
+    .nav,
+    .btn {
+        margin: 0;
+    }
+
+    .nav {
+        @include navigation();
+    }
+
+    .select-kit.combo-box {
+        .combo-box-header {
+            border: none;
+            background-color: transparent;
+            padding: 1.4em 1em;
+            &.is-focused {
+                background-color: $tertiary;
+                color: $secondary;
+            }
+        }
+    }
+    .btn {
+        padding: 0.75em 1em;
+        background-color: $color_text_dark;
+        color: $tertiary;
+        font-weight: bolder;
+        .d-icon{
+            color: $color_text_light;
+        }
+    }
+}
+
+.body-page{
+    .nav-pills{
+        background-color: $header_background;
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        @include navigation();
+    }
+}
+
+.select-kit {
+    &.combo-box .select-kit-header.is-focused {
+        box-shadow: none;
+    }
+
+    .select-kit-body,
+    .select-kit-collection {
+        background-color: $color_main_background;
+    }
+}
+
+.top-lists,
+.groups-header,
+.topic-list-bottom,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea,
+div.ac-wrap,
+.select-kit.combo-box .select-kit-header,
+.select-kit.multi-select .multi-select-header,
+.tag-sort-options,
+.tag-list{
+    @extend %main-background-element;
+}
+
+.search-container .search-advanced-sidebar{
+    .search-advanced-title,
+    .search-advanced-filters{
+        @extend %main-background-element;
+    }
+}
+
+.menu-panel{
+    box-shadow: 0 0 6px 0 $tertiary;
+    background-color: $header_background;
+}
+.user-menu .notifications .read{
+    background-color: $color_dark_background;
+}
+
+table {
+    thead {
+        background-color: $color_main_background;
+
+        th {
+            color: $color_text_light;
+            font-weight: lighter;
+            text-transform: uppercase;
+        }
+    }
+
+    tbody {
+        border-top: 1px solid $tertiary-high;
+
+        tr {
+            background-color: $color_main_background;
+            border: none;
+
+            &:nth-of-type(odd) {
+                background-color: $color_dark_background;
+            }
+
+            td {
+                &.main-link{
+                    a.title{
+                        font-weight: lighter;
+                    }
+                }
+                &.category{
+                    display: inline-block;
+                }
+            }
+
+            &.topic-list-item-separator td{
+                border-bottom: 1px solid $tertiary;
+                span{
+                    color: $tertiary;
+                }
+            }
+        }
+    }
+}
+
+#main-outlet {
+    .title-wrapper{
+        background-color: $color_black_background;
+        padding: 1rem;
+    }
+}
+
+#topic-footer-buttons{
+    float: none;
+    background-color: $color_black_background;
+    padding: 1rem;
+}
+
+.topic-area{
+    .topic-post{
+        margin-bottom: 2rem;
+        .topic-avatar{
+            padding-top: 0.75rem;
+            padding-left: 0.75rem;
+            border: none;
+        }
+        .topic-body{
+            float: none;
+            background-color: $color_black_background;
+            border: none;
+            padding: 1.5rem 0 0 0;
+        }
+        .contents{
+            background-color: $header_background;
+            padding: 0.5rem;
+        }
+        .topic-map{
+            margin: 0;
+            background-color: darken($color_main_background, 10%);
+            border: none;
+            section{
+                border: none;
+            }
+        }
+    }
+    .small-action{
+        border: none;
+    }
+    .time-gap {
+        padding: 0 100px;
+        margin-bottom: 0;
+        .topic-avatar{
+            display: none;
+        }
+    }
+    .topic-status-info{
+        border: none;
+    }
+}
+
+.container {
+    &>h1, &>h2, &>.title {
+        background-color: $color_main_background;
+        padding: 1rem;
+    }
+    .directory{
+        &>.clearfix{
+            @extend %header-background-element;
+            &>input{
+                margin: 0;
+            }
+        }
+        tr.me{
+            background-color: $color_black_background;
+            td:first-of-type{
+                border-left: 4px solid $tertiary;
+                display: inline-block;
+            }
+        }
+        .total-rows{
+            padding: 0.5rem 0;
+        }
+    }
+}
+
+.badge-groups {
+    .badge-grouping {
+        background-color: $color_main_background;
+        .title {
+            padding: 1rem;
+            &>h3 {
+                margin: 0;
+            }
+        }
+        .badge-group-list{
+            margin-top: 1rem;
+            padding-left: 0.5rem;
+            .badge-card{
+                // background-color: darken($color_main_background, 8%);
+                background-color: transparent;
+                border: none;
+                box-shadow: 0 0 0.1rem 0 $tertiary;
+            }
+        }
+    }
+}
+
+.cooked{
+    color: $color_text_light;
+    blockquote {
+        border-color: $tertiary;
+        background-color: darken($color_main_background, 10%);;
+    }
+}
