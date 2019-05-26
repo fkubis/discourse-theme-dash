@@ -133,6 +133,10 @@ html {
         margin: 0;
     }
 
+    ol.category-breadcrumb{
+        margin: 8px 0;
+    }
+
     .nav {
         @include navigation();
     }
@@ -157,6 +161,12 @@ html {
             color: $color_text_light;
         }
     }
+}
+
+.online_users_widget{
+    background-color: $header_background;
+    padding: 0.75em 0.5em 0.4em 0.5em;
+    margin-bottom: 7px;
 }
 
 .body-page{
@@ -213,11 +223,28 @@ div.ac-wrap,
     }
 }
 
+.admin-content .admin-contents{
+    @extend %main-background-element;
+}
+
+.user-content{
+    @extend %main-background-element;
+}
+.user-main .about.collapsed-info .details{
+    background-color: transparent;
+    border-bottom: none;
+}
+
 .menu-panel{
     box-shadow: 0 0 6px 0 $tertiary;
     background-color: $header_background;
 }
+
 .user-menu .notifications .read{
+    background-color: $color_dark_background;
+}
+
+.group-details-container, .group-members-actions{
     background-color: $color_dark_background;
 }
 
@@ -253,21 +280,32 @@ table {
                     display: inline-block;
                 }
             }
+        }
+    }
+}
 
-            &.topic-list-item-separator td{
-                border-bottom: 1px solid $tertiary;
-                span{
-                    color: $tertiary;
-                }
-            }
+table.topic-list{
+    tbody tr.topic-list-item-separator td{
+        border-bottom: 1px solid $tertiary;
+        span{
+            color: $tertiary;
         }
     }
 }
 
 #main-outlet {
-    .title-wrapper{
+    .title-wrapper, .table-heading{
         background-color: $color_black_background;
         padding: 1rem;
+    }
+    .latest-topic-list{
+        .latest-topic-list-item {
+            background-color: $color_black_background;
+            padding: 1rem;
+            &:nth-of-type(odd) {
+                background-color: $color_dark_background;
+            }
+        }
     }
 }
 
@@ -275,6 +313,17 @@ table {
     float: none;
     background-color: $color_black_background;
     padding: 1rem;
+}
+
+.btn-default{
+    background-color: $color_black_background;
+}
+
+.btn-danger{
+    color: $color_text_light;
+    .d-icon{
+        color: $color_text_light;
+    }
 }
 
 .topic-area{
@@ -366,10 +415,44 @@ table {
     }
 }
 
+.groups-boxes{
+    .group-box{
+        background-color: $color_main_background;
+        border: none;
+    }
+}
+
 .cooked{
     color: $color_text_light;
     blockquote {
         border-color: $tertiary;
         background-color: darken($color_main_background, 10%);;
+    }
+    .lazyYT.lazyYT-container {
+        width: calc(100% + 2.5em) !important;
+        padding-bottom: calc(56.25% + 1.4em) !important;
+        left: -1.25em;
+    }
+    aside.onebox{
+        border-color: $color_text_light;
+    }
+}
+
+.discourse-kanban-container {
+    overflow-x: auto;
+    .discourse-kanban-list{
+         background-color: $color_main_background;
+         .topics{
+            overflow-y: auto;
+         }
+         .topic-card  {
+            background-color: $header_background;
+            border-radius: 0;
+            box-shadow: none;
+            border-bottom: 1px solid $tertiary;
+         }
+         &:after{
+            background: transparent;
+         }
     }
 }
