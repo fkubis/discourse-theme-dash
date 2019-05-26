@@ -23,7 +23,7 @@
             "love": "8CC63E"
         }
     },
-    "license_url": null,
+    "license_url": "https://github.com/fkubis/discourse-theme-dash/blob/master/LICENSE",
     "name": "Dash",
     "component": false,
     "about_url": null,
