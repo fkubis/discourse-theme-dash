@@ -6,6 +6,8 @@ $color_dark_background: darken($color_main_background, 3%) !default;
 $color_text_light: darken($primary, 20%) !default;
 $color_text_dark: $header_background;
 $color_link: $quaternary !default;
+$font-size: 1em !default;
+$line-height: 2 * $font-size !default;
 
 @font-face {
     font-family: 'Titillium Web';
@@ -104,7 +106,13 @@ body {
 }
 
 html {
-    font-size: 14px;
+    font-size: $font-size;
+}
+
+a.mention{
+    background-color: $tertiary;
+    color: $color_text_dark;
+    border-radius: 0;
 }
 
 .d-header {
@@ -434,6 +442,14 @@ table.topic-list{
     }
     aside.onebox{
         border-color: $color_text_light;
+    }
+    p, li{
+        line-height: $line-height;
+        font-weight: 400;
+    }
+    b, strong {
+        font-size: $font-size;
+        font-weight: 600;
     }
 }
 
