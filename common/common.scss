@@ -431,7 +431,7 @@ table.topic-list{
 
 .cooked{
     color: $color_text_light;
-    blockquote {
+    blockquote, aside.quote .title {
         border-color: $tertiary;
         background-color: darken($color_main_background, 10%);;
     }
